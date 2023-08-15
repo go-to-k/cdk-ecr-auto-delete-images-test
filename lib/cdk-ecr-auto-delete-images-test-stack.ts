@@ -1,16 +1,21 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { RemovalPolicy, Stack, StackProps } from "aws-cdk-lib";
+import { Repository } from "aws-cdk-lib/aws-ecr";
+import { Construct } from "constructs";
 
-export class CdkEcrAutoDeleteImagesTestStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+export class CdkEcrAutoDeleteImagesTestStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    new Repository(this, "ImageRepository1", {
+      repositoryName: "name01new",
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteImages: true,
+    });
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkEcrAutoDeleteImagesTestQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    new Repository(this, "ImageRepository2", {
+      repositoryName: "name02",
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteImages: true,
+    });
   }
 }

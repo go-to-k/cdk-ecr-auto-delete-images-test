@@ -1,0 +1,27 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "cSpell.words": [
+        "dind",
+        "BUILDKIT",
+        "FASTZIP",
+        "cicd",
+        "Awsvpc",
+        "Cooldown",
+        "awslogs",
+        "Fargate",
+        "sessionmanager",
+        "sessionmanagerplugin",
+        "AWSCLIV2",
+        "dockle",
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true, // eslint
+        "source.fixAll.stylelint": true // Stylelint
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+}
