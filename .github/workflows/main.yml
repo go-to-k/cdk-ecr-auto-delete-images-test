@@ -1,0 +1,26 @@
+name: Run delstack
+
+on:
+  push:
+    branches:
+      # - main
+      - ci/test
+
+jobs:
+  run-delstack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download and Install delstack
+        run: |
+          VERSION="v0.14.1"
+          wget https://github.com/go-to-k/delstack/releases/download/{VERSION}/delstack-{VERSION}-linux-amd64.tar.gz
+          tar xzf delstack-{VERSION}-linux-amd64.tar.gz
+          chmod +x delstack
+          sudo mv delstack /usr/local/bin/
+
+      - name: Run delstack
+        run: delstack -v
