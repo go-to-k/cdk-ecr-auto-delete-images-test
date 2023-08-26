@@ -17,7 +17,7 @@ jobs:
       - name: Download and Install delstack
         run: |
           VERSION="v0.14.1"
-          wget ${VERSION}/delstack_${VERSION}_Linux_x86_64.tar.gz
+          wget https://github.com/go-to-k/delstack/releases/download/${VERSION}/delstack_${VERSION}_Linux_x86_64.tar.gz
           tar xzf delstack-${VERSION}-linux-amd64.tar.gz
           chmod +x delstack
           sudo mv delstack /usr/local/bin/
