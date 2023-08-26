@@ -18,7 +18,7 @@ jobs:
         run: |
           VERSION="0.14.1"
           wget https://github.com/go-to-k/delstack/releases/download/v${VERSION}/delstack_${VERSION}_Linux_x86_64.tar.gz
-          tar xzf delstack-${VERSION}-linux-amd64.tar.gz
+          tar xzf delstack_${VERSION}_Linux_x86_64.tar.gz
           chmod +x delstack
           sudo mv delstack /usr/local/bin/
 
