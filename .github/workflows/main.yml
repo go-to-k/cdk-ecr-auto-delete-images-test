@@ -9,18 +9,9 @@ on:
 jobs:
   run-delstack:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Download and Install delstack
-        run: |
-          VERSION="0.14.1"
-          wget https://github.com/go-to-k/delstack/releases/download/v${VERSION}/delstack_${VERSION}_Linux_x86_64.tar.gz
-          tar xzf delstack_${VERSION}_Linux_x86_64.tar.gz
-          chmod +x delstack
-          sudo mv delstack /usr/local/bin/
-
+      - uses: go-to-k/delstack@v1
       - name: Run delstack
         run: delstack -v
