@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - uses: go-to-k/delstack@v1.0.1
+      - uses: go-to-k/delstack@v1.0.0
       - name: Run delstack
         run: delstack -v
